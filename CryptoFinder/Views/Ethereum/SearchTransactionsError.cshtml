@@ -1,0 +1,18 @@
+﻿@model Error;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>Error searching for ethereum transactions</h2>
+</div>
+<br />
+<br />
+<br />
+
+<div>
+    <h5>Error description:</h5>
+    <textarea rows="5" cols="80" wrap="hard" disabled>@Model.Description</textarea><br>
+</div>
+
+<button class="btn btn-secondary btn-sm" type="button" onclick="location.href='@Url.Action("Index", "Home")'">Search Again</button>

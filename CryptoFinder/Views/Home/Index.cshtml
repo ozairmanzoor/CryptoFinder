@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    td {
+        padding: 15px;
+    }
+
+    input {
+        width: 500px
+    }
+</style>
+
+<div>
+    <h1>Search Ethereum Transactions</h1>
+    <br /><br /><br />
+
+    <form asp-controller="Ethereum" asp-action="searchTransactions" method="get">
+        <table>
+            <tr>
+                <td>
+                    <span><lable asp-for="blockNumber">Block Number</lable></span>
+                </td>
+                <td>
+                    <input type="text" name="blockNumber" value="0xced189" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <lable asp-for="address">Address</lable>
+                </td>
+                <td>
+                    <input type="text" value="0x5aa3393e361c2eb342408559309b3e873cd876d6" name="address" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <button type="submit">Search</button>
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+</div>

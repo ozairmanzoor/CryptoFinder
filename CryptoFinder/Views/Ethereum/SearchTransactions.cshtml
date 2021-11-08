@@ -1,0 +1,48 @@
+﻿@model EthereumTransactionList;
+@{
+    ViewData["Title"] = "SearchTransactions";
+
+}
+
+<style>
+    table {
+        width: 1200px;
+        table-layout: fixed;
+    }
+    td {
+        word-wrap: break-word
+    }
+</style>
+
+<h2>Ethereum Transactions</h2>
+<br /><br /><br />
+
+<table class='table table-bordered header-fixed'>
+    <thead class="thead-light">
+        <tr>
+            <th>Block Hash</th>
+            <th>Block Number</th>
+            <th>Gas</th>
+            <th>Hash</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model.Transactions)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.BlockHash)</td>
+            <td>@Html.DisplayFor(modelItem => item.BlockNumber)</td>
+            <td>@Html.DisplayFor(modelItem => item.Gas)</td>
+            <td>@Html.DisplayFor(modelItem => item.Hash)</td>
+            <td>@Html.DisplayFor(modelItem => item.From)</td>
+            <td>@Html.DisplayFor(modelItem => item.To)</td>
+            <td>@Html.DisplayFor(modelItem => item.Value)</td>
+        </tr>
+    }
+</table>
+
+<br />
+<button class="btn btn-secondary btn-sm" type="button" onclick="location.href='@Url.Action("Index", "Home")'">Search Again</button>
